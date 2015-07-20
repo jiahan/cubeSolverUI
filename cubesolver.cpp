@@ -183,7 +183,7 @@ void CubeSolver::calculateStep(){
         //output result of this phase
         for( i=0; i<j; i++){
             cout<<"FBRLUD"[movel[i]]<<moveamount[i] << " ";
-            ui->moveSolution->setText(ui->moveSolution->text() + "FBRLUD"[movel[i]] + QString::number(moveamount[i]) + " ");
+            ui->moveSolution->setText(ui->moveSolution->toPlainText() + "FBRLUD"[movel[i]] + QString::number(moveamount[i]) + " ");
         }
     }
 
