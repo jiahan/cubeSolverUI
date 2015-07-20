@@ -829,11 +829,6 @@ void CubeSolver::on_D8_clicked()
     setValue(D8);
 }
 
-void CubeSolver::on_Reset_clicked()
-{
-
-}
-
 
 void CubeSolver::on_color0_clicked()
 {

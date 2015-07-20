@@ -72,7 +72,6 @@ private slots:
     void on_D6_clicked();
     void on_D7_clicked();
     void on_D8_clicked();
-    void on_Reset_clicked();
     void on_calculate_clicked();
     void on_color0_clicked();
     void on_color1_clicked();
@@ -102,7 +101,6 @@ private:
         U1 = 2, U2 = 2, U3 = 2, U4 = 2, U5 = 2, U6 = 2, U7 = 2, U0 = 2, U8 = 2,
         D1 = 5, D2 = 5, D3 = 5, D4 = 5, D5 = 5, D6 = 5, D7 = 5, D0 = 5, D8 = 5,
         B1 = 3, B2 = 3, B3 = 3, B4 = 3, B5 = 3, B6 = 3, B7 = 3, B0 = 3, B8 = 3;
-
 };
 
 #endif // CUBESOLVER_H
