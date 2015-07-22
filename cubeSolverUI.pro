@@ -18,3 +18,6 @@ SOURCES += main.cpp\
 HEADERS  += cubesolver.h
 
 FORMS    += cubesolver.ui
+
+RESOURCES += \
+    images.qrc

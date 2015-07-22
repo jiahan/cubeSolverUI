@@ -8,7 +8,7 @@ char
     // RLFBUD is the face order used for input, so that a correctly oriented
     // piece in the input has its 'highest value' facelet first. The rest of the
     // program uses moves in FBRLUD order.
-    *faces="RLFBUD",
+    faces[]="RLFBUD",
     // I use char arrays here cause they can be initialised with a string
     // which is shorter than initialising other arrays.
     // Internally cube uses slightly different ordering to the input so that
@@ -18,17 +18,17 @@ char
     //        A  B  C  D   E  F  G  H   I  J  K  L   M   N   O   P     Q   R   S   T
     //        A  E  C  G   B  F  D  H   I  J  K  L   M   S   N   T     R   O   Q   P
     //intrnl: UF DF UB DB  UR DR UL DL  FR FL BR BL  UFR UBL DFL DBR   DLB DRF URB ULF
-    *order="AECGBFDHIJKLMSNTROQP",
+    order[]="AECGBFDHIJKLMSNTROQP",
     //To quickly recognise the pieces, I construct an integer by setting a bit for each
     // facelet. The unique result is then found on the list below to map it to the correct
     // cubelet of the cube.
     //intrnl: UF DF UB DB  UR DR UL DL  FR FL BR BL  UFR UBL DFL DBR   DLB DRF URB ULF
     //bithash:20,36,24,40, 17,33,18,34, 5, 6, 9, 10, 21, 26, 38, 41,   42, 37, 25, 22
-    *bithash="TdXhQaRbEFIJUZfijeYV",
+    bithash[]="TdXhQaRbEFIJUZfijeYV",
     //Each move consists of two 4-cycles. This string contains these in FBRLUD order.
     //intrnl: UF DF UB DB  UR DR UL DL  FR FL BR BL  UFR UBL DFL DBR   DLB DRF URB ULF
     //        A  B  C  D   E  F  G  H   I  J  K  L   M   N   O   P     Q   R   S   T
-    *perm="AIBJTMROCLDKSNQPEKFIMSPRGJHLNTOQAGCEMTNSBFDHORPQ",
+    perm[]="AIBJTMROCLDKSNQPEKFIMSPRGJHLNTOQAGCEMTNSBFDHORPQ",
 
     // current cube position
     poss[20],ori[20],val[20],
@@ -188,6 +188,8 @@ void CubeSolver::calculateStep(){
     }
 
     cout<<endl;
+
+    if(ui->moveSolution->toPlainText() == "") ui->moveSolution->setText("Already solved");
 }
 
 void CubeSolver::on_calculate_clicked()
@@ -381,7 +383,8 @@ int CubeSolver::getposition(int t){
 // sets cube to any position which has index n in table t
 void CubeSolver::setposition(int t, int n){
     int i=0,j=12,k=0;
-    char *corn="QRSTQRTSQSRTQTRSQSTRQTSR";
+    char cornO[]="QRSTQRTSQSRTQTRSQSTRQTSR";
+    char *corn = cornO;
     reset();
     switch(t){
     // case 0 does nothing so leaves cube solved
